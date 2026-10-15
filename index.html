@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhid's Kitchen</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/contact-footer.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body class="bg-background text-text-primary font-body">
+  <!-- Header / Navigation -->
+  <header class="header">
+    <nav class="container mx-auto flex justify-between items-center py-sm">
+      <a href="#" class="logo text-primary font-heading text-2xl">Abhid's Kitchen</a>
+      <button class="nav-toggle hidden md:block" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-list flex space-x-sm">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero flex items-center justify-center text-center">
+    <div class="container mx-auto">
+      <h1 class="hero-title text-text-light font-heading">Taste the Tradition</h1>
+      <p class="hero-subtitle text-text-light mt-sm mb-lg">Authentic flavors crafted with love at Abhid's Kitchen.</p>
+      <a href="#menu" class="btn-primary mt-sm inline-block">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about py-xxl">
+    <div class="container mx-auto grid gap-lg md:grid-cols-2 items-center">
+      <div class="about-image bg-gradient-to-r from-primary to-secondary rounded-md h-64 md:h-auto"></div>
+      <div class="about-content">
+        <h2 class="section-title font-heading text-primary-dark mb-sm">Our Story</h2>
+        <p class="mb-md">Founded by Chef Abhid, our kitchen blends family recipes with fresh, local ingredients. Every dish tells a story of heritage and passion.</p>
+        <ul class="features space-y-sm">
+          <li class="flex items-center">
+            <span class="icon mr-sm">🍽️</span>
+            <span>Hand‑crafted meals</span>
+          </li>
+          <li class="flex items-center">
+            <span class="icon mr-sm">🌿</span>
+            <span>Farm‑to‑table ingredients</span>
+          </li>
+          <li class="flex items-center">
+            <span class="icon mr-sm">❤️</span>
+            <span>Family‑style hospitality</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Highlights Section -->
+  <section id="menu" class="menu py-xxl bg-surface">
+    <div class="container mx-auto">
+      <h2 class="section-title text-center font-heading text-primary-dark mb-xxl">Menu Highlights</h2>
+      <div class="grid gap-lg sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <article class="menu-card p-sm rounded-md shadow-sm">
+          <h3 class="menu-item-name font-heading text-primary-dark mb-xs">Spiced Lamb Kebabs</h3>
+          <p class="menu-item-desc text-text-secondary mb-xs">Juicy lamb marinated in aromatic spices, grilled to perfection.</p>
+          <p class="menu-item-price text-accent font-bold mb-xs">$12.99</p>
+          <span class="tag bg-primary text-text-light px-xs py-xxs rounded-full text-xs">Gluten‑Free</span>
+        </article>
+        <article class="menu-card p-sm rounded-md shadow-sm">
+          <h3 class="menu-item-name font-heading text-primary-dark mb-xs">Vegetarian Biryani</h3>
+          <p class="menu-item-desc text-text-secondary mb-xs">Fragrant basmati rice with seasonal veggies and saffron.</p>
+          <p class="menu-item-price text-accent font-bold mb-xs">$10.50</p>
+          <span class="tag bg-secondary text-text-light px-xs py-xxs rounded-full text-xs">Vegan</span>
+        </article>
+        <article class="menu-card p-sm rounded-md shadow-sm">
+          <h3 class="menu-item-name font-heading text-primary-dark mb-xs">Mango Lassi</h3>
+          <p class="menu-item-desc text-text-secondary mb-xs">Cool, creamy yogurt drink with fresh mango puree.</p>
+          <p class="menu-item-price text-accent font-bold mb-xs">$4.75</p>
+          <span class="tag bg-accent text-text-light px-xs py-xxs rounded-full text-xs">Dairy</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact py-xxl bg-background">
+    <div class="container mx-auto max-w-lg">
+      <h2 class="section-title text-center font-heading text-primary-dark mb-lg">Get in Touch</h2>
+      <form id="contact-form" class="flex flex-col space-y-sm" novalidate>
+        <input type="text" name="name" placeholder="Your Name" required class="input" />
+        <input type="email" name="email" placeholder="Your Email" required class="input" />
+        <textarea name="message" rows="4" placeholder="Your Message" required class="input"></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+      <div id="toast" class="toast hidden fixed bottom-4 right-4 bg-primary-dark text-text-light px-lg py-sm rounded-md shadow-md"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-sm bg-surface border-t border-border">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+      <p class="text-text-secondary mb-sm md:mb-0">© 2024 Abhid's Kitchen. All rights reserved.</p>
+      <ul class="social flex space-x-sm justify-center md:justify-end">
+        <li><a href="#" class="text-primary hover:text-primary-dark" aria-label="Facebook">📘</a></li>
+        <li><a href="#" class="text-primary hover:text-primary-dark" aria-label="Instagram">📸</a></li>
+        <li><a href="#" class="text-primary hover:text-primary-dark" aria-label="Twitter">🐦</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
