@@ -1,0 +1,191 @@
+/* ============================================
+   MENU HIGHLIGHTS SECTION
+   Responsive grid of menu cards
+   3 columns desktop, 2 tablet, 1 mobile
+   ============================================ */
+
+.menu {
+  padding: var(--section, 5rem) 0;
+  background: var(--background, #FFF8F0);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--lg, 1.5rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--md, 1rem);
+}
+
+.menu__card {
+  background: var(--surface, #FFFFFF);
+  border-radius: var(--border-radius-lg, 16px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(44, 62, 80, 0.1));
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(44, 62, 80, 0.1));
+}
+
+.menu__card-header {
+  height: 140px;
+  background: linear-gradient(135deg, var(--primary, #C0392B), var(--primary-dark, #962D22));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu__card-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.1) 50%, transparent 60%);
+}
+
+.menu__card-body {
+  padding: var(--lg, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sm, 0.5rem);
+  flex: 1;
+}
+
+.menu__item-name {
+  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary, #2C3E50);
+  line-height: 1.3;
+}
+
+.menu__item-desc {
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 0.9rem;
+  color: var(--text-secondary, #5D6D7E);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.menu__item-price {
+  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary, #C0392B);
+  margin-top: var(--sm, 0.5rem);
+}
+
+.menu__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--xs, 0.25rem);
+  margin-top: var(--sm, 0.5rem);
+}
+
+.menu__tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-full, 9999px);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.menu__tag--vegan {
+  background: rgba(39, 174, 96, 0.1);
+  color: var(--accent, #27AE60);
+  border: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+.menu__tag--vegetarian {
+  background: rgba(243, 156, 18, 0.1);
+  color: var(--secondary, #F39C12);
+  border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+.menu__tag--spicy {
+  background: rgba(192, 57, 43, 0.1);
+  color: var(--primary, #C0392B);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+}
+
+.menu__tag--gluten-free {
+  background: rgba(44, 62, 80, 0.08);
+  color: var(--text-primary, #2C3E50);
+  border: 1px solid rgba(44, 62, 80, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (min-width: 768px) {
+  .menu__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--xl, 2rem);
+    padding: 0 var(--lg, 1.5rem);
+  }
+
+  .menu__card-header {
+    height: 160px;
+  }
+
+  .menu__item-name {
+    font-size: 1.35rem;
+  }
+
+  .menu__item-desc {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--xl, 2rem);
+    padding: 0 var(--xl, 2rem);
+  }
+
+  .menu__card-header {
+    height: 180px;
+    font-size: 3.5rem;
+  }
+
+  .menu__card-body {
+    padding: var(--xl, 2rem);
+  }
+
+  .menu__item-name {
+    font-size: 1.4rem;
+  }
+
+  .menu__item-desc {
+    font-size: 1rem;
+  }
+
+  .menu__item-price {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .menu__grid {
+    gap: var(--xxl, 3rem);
+  }
+
+  .menu__card-header {
+    height: 200px;
+  }
+}
