@@ -1,0 +1,161 @@
+/* About Section Styles */
+
+.about {
+  padding: var(--section, 5rem) 0;
+  background: var(--background, #FFF8F0);
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--xl, 2rem);
+  align-items: center;
+}
+
+.about__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--border-radius-lg, 16px);
+  background: linear-gradient(135deg, #C0392B 0%, #962D22 40%, #F39C12 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(44, 62, 80, 0.1));
+}
+
+.about__image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(243, 156, 18, 0.2) 0%, transparent 50%);
+}
+
+.about__image::after {
+  content: "🍽️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  opacity: 0.9;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--md, 1rem);
+}
+
+.about__title {
+  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--text-primary, #2C3E50);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.about__desc {
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 1rem;
+  color: var(--text-secondary, #5D6D7E);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.about__features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--md, 1rem);
+  margin-top: var(--sm, 0.5rem);
+}
+
+.about__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sm, 0.5rem);
+  padding: var(--md, 1rem);
+  background: var(--surface, #FFFFFF);
+  border-radius: var(--border-radius-md, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(44, 62, 80, 0.1));
+  border: 1px solid var(--border, #E8D5C4);
+}
+
+.about__feature::before {
+  content: "";
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--border-radius-full, 9999px);
+  background: linear-gradient(135deg, var(--primary, #C0392B), var(--primary-dark, #962D22));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light, #FFFFFF);
+  font-size: 1.1rem;
+}
+
+.about__feature:nth-child(1)::before { content: "🌿"; }
+.about__feature:nth-child(2)::before { content: "👨‍🍳"; }
+.about__feature:nth-child(3)::before { content: "⭐"; }
+.about__feature:nth-child(4)::before { content: "🚚"; }
+
+.about__feature-text {
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 0.875rem;
+  color: var(--text-primary, #2C3E50);
+  line-height: 1.5;
+}
+
+.about__feature-text strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .about__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--xxl, 3rem);
+  }
+
+  .about__image {
+    aspect-ratio: 1 / 1;
+  }
+
+  .about__features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .about {
+    padding: 6rem 0;
+  }
+
+  .about__grid {
+    gap: 4rem;
+  }
+
+  .about__image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .about__title {
+    font-size: 2.75rem;
+  }
+
+  .about__desc {
+    font-size: 1.125rem;
+  }
+
+  .about__features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .about__feature {
+    padding: 1.25rem;
+  }
+}
