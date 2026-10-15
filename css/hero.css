@@ -1,0 +1,114 @@
+/* css/hero.css */
+/* Hero section styles – depends on css/base.css for custom properties */
+
+/* ------------------------------------------------------------
+   Layout
+   ------------------------------------------------------------ */
+.hero {
+  /* Full‑screen hero with gradient overlay */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* mobile fallback */
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+/* Gradient overlay for visual depth */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative; /* keep above overlay */
+  max-width: 48rem;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+/* ------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------ */
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-light);
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-light);
+  opacity: 0.9;
+}
+
+/* ------------------------------------------------------------
+   CTA Button
+   ------------------------------------------------------------ */
+.hero__cta {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero__cta:hover,
+.hero__cta:focus {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  outline: none;
+}
+
+/* ------------------------------------------------------------
+   Responsive adjustments
+   ------------------------------------------------------------ */
+@media (min-width: var(--breakpoint-tablet)) {
+  .hero {
+    min-height: 70vh;
+  }
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero__subtitle {
+    font-size: 1.125rem;
+  }
+  .hero__cta {
+    font-size: 1.125rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
+
+@media (min-width: var(--breakpoint-desktop)) {
+  .hero {
+    min-height: 80vh;
+  }
+  .hero__title {
+    font-size: 3rem;
+  }
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+  .hero__cta {
+    font-size: 1.25rem;
+    padding: var(--spacing-md) var(--spacing-xl);
+  }
+}
